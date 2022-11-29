@@ -29,7 +29,6 @@ struct Game{
         charGuess.append(char)
         if !word.contains(char) {
             remainGuessCount -= 1
-            
         }
     }
 }
