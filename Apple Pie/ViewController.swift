@@ -42,16 +42,21 @@ class ViewController: UIViewController {
     
     func newTour() {
         let newWord = wordList.removeFirst()
-        currentGame = Game(word: newWord, remainGuessCount: countOfGuess, wordGuess: [])
+        currentGame = Game(word: newWord, remainGuessCount: countOfGuess, charGuess: [])
         updateUI()
         
     }
     
     func updateUI(){
+        var words = [String]()
         pointLabel.text = "total true : \(totalTrue) + total false : \(totalFalse)"
         treeImageView.image = UIImage(named: "Tree \(countOfGuess)")
-        
+        for word in currentGame.formattedWord{
+            var wordString = String(word)
+            words.append(wordString)
+        }
+        let wordWithSpace = words.joined(separator: " ")
+        resultLabel.text = wordWithSpace
     }
-    
 }
 
