@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     func updateUI(){
         var words = [String]()
         pointLabel.text = "total true : \(totalTrue) + total false : \(totalFalse)"
-        treeImageView.image = UIImage(named: "Tree \(countOfGuess)")
+        treeImageView.image = UIImage(named: "Tree \(currentGame.remainGuessCount)")
         resultLabel.text = currentGame.formattedWord
         for word in currentGame.formattedWord{
             var wordString = String(word)
